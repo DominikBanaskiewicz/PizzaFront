@@ -1,0 +1,13 @@
+.img {
+  width: 200px;
+}
+.pizzasList__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 30%;
+  align-items: center;
+  justify-content: center;
+}
+.PizzasList__elem {
+  flex-basis: 30%;
+}

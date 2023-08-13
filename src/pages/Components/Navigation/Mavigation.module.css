@@ -1,0 +1,10 @@
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_link {
+  text-decoration: none;
+  color: red;
+  font-size: 22px;
+  font-style: italic;
+}
