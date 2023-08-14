@@ -1,10 +1,12 @@
 .nav_container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .nav_link {
   text-decoration: none;
   color: red;
   font-size: 22px;
+  font-weight: 500;
   font-style: italic;
 }

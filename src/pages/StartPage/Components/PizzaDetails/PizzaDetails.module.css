@@ -1,0 +1,81 @@
+.pizzaDetails__Container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+  padding-bottom: 1rem;
+}
+.PizzaDetails__Content_Box {
+  display: flex;
+  padding: 0 3% 0 3%;
+}
+
+.PizzaDetails__Pizza__Box {
+  padding: 2% 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.PizzaDetails__Pizza_Name {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0 0 2rem 0;
+  color: rgb(202, 38, 38);
+}
+.PizzaDetails__Pizza_img {
+  width: 25vw;
+  border-radius: 2rem;
+}
+.PizzaDetails__IngredientsName {
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.PizzaDetails__Pizza_ingredients_Box {
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 10px;
+  width: 25vw;
+}
+.__ingredients_name {
+  display: flex;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  padding: 1% 0 1% 2rem;
+  font-size: 1rem;
+}
+.__ingredients_name::before {
+}
+.PizzaDetails__IngredientsList_Box {
+  display: flex;
+
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+.PizzaDetails__IngredientsList_Name {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+.PizzaDetails__IngredientsList_Elem {
+  width: 100%;
+  margin: 2% 0 2% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.PizzaDetails__IngredientsList_Elem_Name {
+  width: 60%;
+  font-size: 18px;
+}
+.PizzaDetails__Order_Btn {
+  margin-top: 2rem;
+  padding: 1.5rem 4rem 1.5rem 4rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+.PizzaDetails__Order_Btn:hover {
+  transform: scale(1.2);
+  transition-duration: 300ms;
+}

@@ -1,0 +1,26 @@
+.Ingredients_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+  padding-bottom: 1rem;
+}
+.Ingredients_List {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+.Ingredients_List__elem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 24%;
+}
+.Ingredients_List__elem_img {
+  width: 9.5vw;
+  min-width: 150px;
+}

@@ -6,6 +6,7 @@ import { addOperationToPizza } from "../../../../redux/operationsForPizzaSlice";
 import { addModifyPizza } from "../../../../redux/operationsForYOurPizzaSlice";
 import { deleteIngredientFromPizza } from "../../../../redux/operationsForYOurPizzaSlice";
 import { orderPizza } from "../../../../redux/actions";
+import css from "./PizzaDetails.module.css";
 import {
   selectPizzaData,
   selectIngredientsNameArray,
@@ -41,41 +42,59 @@ export const PizzaDetails = (pizza) => {
 
   return (
     <div key={pizza._id}>
-      <div>
-        <p>{SelectedPizza[0].name} </p>
-        <img width={200} src={SelectedPizza[0].img} alt=" data obraz pizzy" />
-      </div>
-      <div>
-        {SelectedPizza[0].ingredients.map((elem) => (
-          <div key={elem}>
-            <span>{elem}</span>
-          </div>
-        ))}
-        <div>
-          <p>Wszyskie składniki</p>
-          {listaWszyskichSkladnikow.map((elem) => (
-            <div key={elem}>
-              <span>{elem}</span>
-              <button
-                onClick={() => {
-                  dodajSkladnik(SelectedPizza[0].name, "dodaj", elem);
-                }}
-              >
-                dodaj
-              </button>
-              <button
-                onClick={() => {
-                  usunSkladnik(SelectedPizza[0].name, "usun", elem);
-                }}
-              >
-                usun
-              </button>
+      <div className={css.pizzaDetails__Container}>
+        <div className={css.PizzaDetails__Content_Box}>
+          <div className={css.PizzaDetails__Pizza__Box}>
+            <p className={css.PizzaDetails__Pizza_Name}>
+              {SelectedPizza[0].name}
+            </p>
+            <img
+              className={css.PizzaDetails__Pizza_img}
+              src={SelectedPizza[0].img}
+              alt="pizza"
+            />
+            <p className={css.PizzaDetails__IngredientsName}> Składniki</p>
+            <div className={css.PizzaDetails__Pizza_ingredients_Box}>
+              {SelectedPizza[0].ingredients.map((elem) => (
+                <span key={elem} className={css.__ingredients_name}>
+                  {elem}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className={css.PizzaDetails__IngredientsList_Box}>
+            <p className={css.PizzaDetails__IngredientsList_Name}>
+              Wszyskie składniki
+            </p>
+            {listaWszyskichSkladnikow.map((elem) => (
+              <div
+                key={elem}
+                className={css.PizzaDetails__IngredientsList_Elem}
+              >
+                <span className={css.PizzaDetails__IngredientsList_Elem_Name}>
+                  {elem}
+                </span>
+                <button
+                  onClick={() => {
+                    dodajSkladnik(SelectedPizza[0].name, "dodaj", elem);
+                  }}
+                >
+                  dodaj
+                </button>
+                <button
+                  onClick={() => {
+                    usunSkladnik(SelectedPizza[0].name, "usun", elem);
+                  }}
+                >
+                  usuń
+                </button>
+              </div>
+            ))}
+            <button className={css.PizzaDetails__Order_Btn}>
+              Zamów taką pizzę
+            </button>
+          </div>
         </div>
-
-        <button>Zamów taką pizze </button>
-        <Link to="/IngredientsSite">Składniki</Link>
       </div>
     </div>
   );

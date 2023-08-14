@@ -9,7 +9,7 @@ import {
   fetchingIngredientsSuccess,
 } from "./ingredientsSlice";
 
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "http://192.168.0.178:3001/";
 
 export const fetchPizzas = () => async (dispatch) => {
   try {
