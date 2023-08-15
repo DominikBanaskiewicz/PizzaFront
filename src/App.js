@@ -29,9 +29,3 @@ function App() {
 }
 
 export default App;
-
-/*
-Routes>
-          <Route path="/" element={<PizzasList />} />
-          <Route path="/pizzaDetails/:Id" element={<PizzaDetails />} />
-        </Routes> */

@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchPizzas, fetchIngredients2 } from "../../../../redux/operations";
 import { selectPizzaData } from "../../../../redux/selectors";
+import { motion } from "framer-motion";
+
 import css from "./PizzasList.module.css";
 export const PizzasList = () => {
   const dispatch = useDispatch();
@@ -29,13 +31,23 @@ export const PizzasList = () => {
         <div className={css.pizzasList__container}>
           {pizzas.data.data.map((elem) => {
             return (
-              <div className={css.PizzasList__elem} key={elem._id}>
+              <motion.div
+                className={css.PizzasList__elem}
+                key={elem._id}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
                 <p>{elem.name}</p>
 
                 <button onClick={() => routeChange(elem._id)}>
                   <img className={css.img} src={elem.img} alt="" />
                 </button>
-              </div>
+              </motion.div>
             );
           })}
         </div>

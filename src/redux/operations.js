@@ -25,9 +25,7 @@ export const fetchIngredients2 = () => async (dispatch) => {
   try {
     dispatch(fetchingIngredientsInProgress());
     const response = await axios.get("/ingredients");
-    console.log(response);
+
     dispatch(fetchingIngredientsSuccess(response.data));
-  } catch (e) {
-    console.log(e);
-  }
+  } catch (e) {}
 };
