@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DominikBanaskiewicz/PizzaFront/static/css/main.7084a673.css",
+    "main.js": "/DominikBanaskiewicz/PizzaFront/static/js/main.5cff8c60.js",
+    "static/js/787.28cb0dcd.chunk.js": "/DominikBanaskiewicz/PizzaFront/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/DominikBanaskiewicz/PizzaFront/index.html",
+    "main.7084a673.css.map": "/DominikBanaskiewicz/PizzaFront/static/css/main.7084a673.css.map",
+    "main.5cff8c60.js.map": "/DominikBanaskiewicz/PizzaFront/static/js/main.5cff8c60.js.map",
+    "787.28cb0dcd.chunk.js.map": "/DominikBanaskiewicz/PizzaFront/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7084a673.css",
+    "static/js/main.5cff8c60.js"
+  ]
+}
