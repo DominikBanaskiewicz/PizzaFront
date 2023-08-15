@@ -5,7 +5,7 @@ import { selectPizzaData } from "../../../../redux/selectors";
 import { YourPizzasModification } from "../../../../redux/selectors";
 import { selectIngredients } from "../../../../redux/selectors";
 import { nanoid } from "@reduxjs/toolkit";
-import css from "IngredientsDetails.module.css";
+import css from "./IngredientsDetails.module.css";
 import { NavLink } from "react-router-dom";
 
 export const IngredientsDetails = () => {

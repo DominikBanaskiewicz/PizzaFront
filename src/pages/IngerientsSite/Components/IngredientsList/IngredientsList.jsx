@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectIngredients } from "../../../../redux/selectors";
-import css from "IngredientsList.module.css";
+import css from "./IngredientsList.module.css";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchIngredients2 } from "../../../../redux/operations";

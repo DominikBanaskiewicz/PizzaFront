@@ -1,5 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { PizzasList } from "Components/PizzasList/Pizzaslist";
+import { PizzasList } from "./Components/PizzasList/Pizzaslist";
 
 export default function StartPage() {
   return (

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { addModifyPizza } from "../../../../redux/operationsForYOurPizzaSlice";
 import { deleteIngredientFromPizza } from "../../../../redux/operationsForYOurPizzaSlice";
 //import { orderPizza } from "../../../../redux/actions";
-import css from "PizzaDetails.module.css";
+import css from "./PizzaDetails.module.css";
 import Notiflix from "notiflix";
 import { useEffect } from "react";
 import {
