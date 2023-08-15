@@ -44,8 +44,7 @@
   padding: 1% 0 1% 2rem;
   font-size: 1rem;
 }
-.__ingredients_name::before {
-}
+
 .PizzaDetails__IngredientsList_Box {
   display: flex;
 
@@ -69,6 +68,16 @@
   width: 60%;
   font-size: 18px;
 }
+.PizzaDetails__Ingredients_Btn {
+  border-radius: 0.3rem;
+  border: none;
+}
+.PizzaDetails__Ingredients_Btn:hover {
+  cursor: pointer;
+  background-color: rgb(60, 8, 8);
+  color: white;
+  transition-duration: 300ms;
+}
 .PizzaDetails__Order_Btn {
   margin-top: 2rem;
   padding: 1.5rem 4rem 1.5rem 4rem;
@@ -78,4 +87,7 @@
 .PizzaDetails__Order_Btn:hover {
   transform: scale(1.2);
   transition-duration: 300ms;
+  cursor: pointer;
+  background-color: rgb(60, 8, 8);
+  color: white;
 }

@@ -6,7 +6,7 @@ export default function IngredientsSite() {
     <HelmetProvider>
       <div>
         <Helmet>
-          <title>Check your favourite</title>s
+          <title>Check your favourites</title>
         </Helmet>
 
         {<IngredientsList />}

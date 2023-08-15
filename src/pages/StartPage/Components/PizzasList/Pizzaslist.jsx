@@ -42,11 +42,14 @@ export const PizzasList = () => {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <p>{elem.name}</p>
+                <p className={css.PizzasList__header}>{elem.name}</p>
 
-                <button onClick={() => routeChange(elem._id)}>
-                  <img className={css.img} src={elem.img} alt="" />
-                </button>
+                <img
+                  onClick={() => routeChange(elem._id)}
+                  className={css.img}
+                  src={elem.img}
+                  alt=""
+                />
               </motion.div>
             );
           })}

@@ -51,6 +51,7 @@ export const PizzaDetails = (pizza) => {
 
   function orderPizza2(elem) {
     console.log(elem);
+    Notiflix.Notify.success("Dziękujemy za dodanie pizzy do koszyka");
   }
 
   return (
@@ -88,6 +89,7 @@ export const PizzaDetails = (pizza) => {
                   {elem}
                 </span>
                 <button
+                  className={css.PizzaDetails__Ingredients_Btn}
                   onClick={() => {
                     dodajSkladnik(SelectedPizza[0].name, "dodaj", elem);
                   }}
@@ -95,6 +97,7 @@ export const PizzaDetails = (pizza) => {
                   dodaj
                 </button>
                 <button
+                  className={css.PizzaDetails__Ingredients_Btn}
                   onClick={() => {
                     isIngredientInPizza(elem, SelectedPizza[0]);
                     usunSkladnik(SelectedPizza[0], "usun", elem);
@@ -105,7 +108,7 @@ export const PizzaDetails = (pizza) => {
               </div>
             ))}
             <button
-              onClick={orderPizza2(SelectedPizza[0])}
+              onClick={() => orderPizza2(SelectedPizza[0])}
               className={css.PizzaDetails__Order_Btn}
             >
               Zamów taką pizzę

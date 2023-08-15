@@ -64,5 +64,12 @@
   font-size: 1.5rem;
 }
 .IngredientDetails__Pizzas_List_Elem_Img {
+  margin-top: 1rem;
   width: 10vw;
+  border-radius: 1rem;
+  border: 3px solid white;
+}
+.IngredientDetails__Pizzas_List_Elem_Img:hover {
+  transform: scale(1.1);
+  transition-duration: 300ms;
 }

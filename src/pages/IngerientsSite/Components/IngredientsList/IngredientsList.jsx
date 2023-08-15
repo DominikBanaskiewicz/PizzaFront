@@ -22,18 +22,19 @@ export const IngredientsList = () => {
   const ingredients = useSelector(selectIngredients);
   return (
     <div className={css.Ingredients_Container}>
-      <p>SPRAWDŹ KTÓRA PIZZA ZAWIERA TWÓJ ULUBIONY SKŁADNIK</p>
+      <p className={css.IngredientsList__Header}>
+        SPRAWDŹ KTÓRA PIZZA ZAWIERA TWÓJ ULUBIONY SKŁADNIK
+      </p>
       <div className={css.Ingredients_List}>
         {ingredients.map((elem) => {
           return (
             <div className={css.Ingredients_List__elem} key={elem._id}>
-              <button onClick={() => routeChange(elem.name)}>
-                <img
-                  className={css.Ingredients_List__elem_img}
-                  src={elem.img}
-                  alt={elem.name}
-                />
-              </button>
+              <img
+                onClick={() => routeChange(elem.name)}
+                className={css.Ingredients_List__elem_img}
+                src={elem.img}
+                alt={elem.name}
+              />
             </div>
           );
         })}
