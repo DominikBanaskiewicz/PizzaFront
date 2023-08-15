@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const yourPizzasInitialState = [];
 
@@ -13,6 +13,7 @@ const pizzaSlice = createSlice({
       prepare(nazwapizzy, typOperacji, skladnik) {
         return {
           payload: {
+            id: nanoid(),
             nazwapizzy: nazwapizzy,
             typOperacji: typOperacji,
             skladnik: skladnik,
@@ -27,6 +28,7 @@ const pizzaSlice = createSlice({
       prepare(nazwapizzy, typOperacji, skladnik) {
         return {
           payload: {
+            id: nanoid(),
             nazwapizzy: nazwapizzy,
             typOperacji: typOperacji,
             skladnik: skladnik,

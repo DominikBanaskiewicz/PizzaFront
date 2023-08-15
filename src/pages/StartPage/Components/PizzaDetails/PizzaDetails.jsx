@@ -2,18 +2,21 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addOperationToPizza } from "../../../../redux/operationsForPizzaSlice";
+//import { addOperationToPizza } from "../../../../redux/operationsForPizzaSlice";
 import { addModifyPizza } from "../../../../redux/operationsForYOurPizzaSlice";
 import { deleteIngredientFromPizza } from "../../../../redux/operationsForYOurPizzaSlice";
-import { orderPizza } from "../../../../redux/actions";
+//import { orderPizza } from "../../../../redux/actions";
 import css from "./PizzaDetails.module.css";
+import Notiflix from "notiflix";
+import { useEffect } from "react";
 import {
   selectPizzaData,
   selectIngredientsNameArray,
 } from "../../../../redux/selectors";
-import { Link } from "react-router-dom";
 
 export const PizzaDetails = (pizza) => {
+  useEffect(() => {}, []);
+
   const { pizzas } = useSelector(selectPizzaData);
   const pizzaData = pizzas.data.data;
 
@@ -29,15 +32,25 @@ export const PizzaDetails = (pizza) => {
 
   function dodajSkladnik(nazwapizzy, typOperacji, skladnik) {
     dispatch(addModifyPizza(nazwapizzy, typOperacji, skladnik));
-    dispatch(addOperationToPizza(nazwapizzy, typOperacji, skladnik));
+    //  dispatch(addOperationToPizza(nazwapizzy, typOperacji, skladnik));
   }
-  function usunSkladnik(nazwapizzy, typOperacji, skladnik) {
-    dispatch(addOperationToPizza(nazwapizzy, typOperacji, skladnik));
-    dispatch(deleteIngredientFromPizza(nazwapizzy, typOperacji, skladnik));
+  function usunSkladnik(pizza, typOperacji, skladnik) {
+    if (isIngredientInPizza(skladnik, pizza)) {
+      // dispatch(addOperationToPizza(pizza.name, typOperacji, skladnik));
+      dispatch(deleteIngredientFromPizza(pizza.name, typOperacji, skladnik));
+    } else {
+      Notiflix.Notify.failure("Ta pizza nie posiada tego składnika", {
+        timeout: 4000,
+      });
+    }
   }
 
-  function orderPizza2(nazwapizzy) {
-    dispatch(orderPizza(nazwapizzy));
+  const isIngredientInPizza = (ingredient, pizza) => {
+    return pizza.ingredients.some((elem) => elem === ingredient);
+  };
+
+  function orderPizza2(elem) {
+    console.log(elem);
   }
 
   return (
@@ -83,14 +96,18 @@ export const PizzaDetails = (pizza) => {
                 </button>
                 <button
                   onClick={() => {
-                    usunSkladnik(SelectedPizza[0].name, "usun", elem);
+                    isIngredientInPizza(elem, SelectedPizza[0]);
+                    usunSkladnik(SelectedPizza[0], "usun", elem);
                   }}
                 >
                   usuń
                 </button>
               </div>
             ))}
-            <button className={css.PizzaDetails__Order_Btn}>
+            <button
+              onClick={orderPizza2(SelectedPizza[0])}
+              className={css.PizzaDetails__Order_Btn}
+            >
               Zamów taką pizzę
             </button>
           </div>

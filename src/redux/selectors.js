@@ -11,3 +11,7 @@ export const selectIngredientsNameArray = (state) => {
     return elem.name;
   });
 };
+
+export const selectOperationsForPizza = (state) => {
+  return state.operationforYOurPizza;
+};

@@ -1,0 +1,17 @@
+.OperationList__container {
+  display: flex;
+  min-height: 90vh;
+  justify-content: space-between;
+  padding: 0 5vw 0 5vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+}
+.OperationsList_Name {
+  font-size: 2rem;
+}
+
+.OperationList__elem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 50%;
+}

@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { PizzaDetails } from "./pages/StartPage/Components/PizzaDetails/PizzaDetails";
 import { IngredientsDetails } from "./pages/IngerientsSite/Components/IngredientDetails/IngredientDetails";
 import { Navigation } from "./pages/Components/Navigation/Navigation";
+import { OperationsList } from "./pages/OperationList/Compoments/OperationList/OperationList";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           />
           <Route path="operations" element={<IngredientsDetails />} />
           <Route path="YourOrders" element={<IngredientsDetails />} />
+          <Route path="OperationsList" element={<OperationsList />}></Route>
         </Routes>
       </div>
     </div>

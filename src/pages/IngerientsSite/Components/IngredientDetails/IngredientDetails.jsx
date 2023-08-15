@@ -5,6 +5,8 @@ import { selectPizzaData } from "../../../../redux/selectors";
 import { YourPizzasModification } from "../../../../redux/selectors";
 import { selectIngredients } from "../../../../redux/selectors";
 import { nanoid } from "@reduxjs/toolkit";
+import css from "./IngredientsDetails.module.css";
+import { NavLink } from "react-router-dom";
 
 export const IngredientsDetails = () => {
   const { name } = useParams();
@@ -20,36 +22,77 @@ export const IngredientsDetails = () => {
   const pizzasWithIngredient = pizzaData.filter((elem) => {
     return elem.ingredients.some(isTheSameName);
   });
+
   // znajdz liste operacji na składniku
   const operations = useSelector(YourPizzasModification);
   const operationsWithIngredient = operations.filter((elem) => {
     return elem.skladnik === name;
   });
 
+  const getPizzaLink = (elem) => {
+    return "/PizzaDetails/" + elem._id;
+  };
+
+  const changeToProperWord = (elem) => {
+    if (elem === "dodaj") return "Dodano do";
+    else return "Usunięto z";
+  };
+
   return (
-    <>
-      <div>Pizze które zawierają wybrany składnik</div>
-      <div>{ingredientdetails[0].name}</div>
-      <img width={300} src={ingredientdetails[0].img} alt="" />
-      {pizzasWithIngredient.map((elem) => {
-        return (
-          <div key={nanoid()}>
-            <span>{elem.name}</span>
-            <img width={200} src={elem.img} alt=" data obraz pizzy" />
-          </div>
-        );
-      })}
-      <div>Operacje na składniku</div>
-      <ul>
-        {operationsWithIngredient.map((elem) => {
-          return (
-            <li key={nanoid()}>
-              <p>Nazwa pizzy która jest modyfikowana {elem.nazwapizzy} </p>
-              <p>Typ operacji {elem.typOperacji}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <div className={css.IngredientsDetails__Container}>
+      <div className={css.IngredientDetails__box}>
+        <div className={css.IngredientDetails__Ingredient_Name}>
+          {ingredientdetails[0].name}
+        </div>
+        <img
+          className={css.IngredientDetails__Ingredient_Image}
+          src={ingredientdetails[0].img}
+          alt={ingredientdetails[0].name}
+        />
+        <div className={css.IngredientDetails_Operations_Title}>
+          Operacje na składniku
+        </div>
+        <ul className={css.IngredientDetails__Operations_List}>
+          {operationsWithIngredient.map((elem) => {
+            return (
+              <li
+                key={nanoid()}
+                className={css.IngredientDetails__Operations_List_Elem}
+              >
+                <span>
+                  {changeToProperWord(elem.typOperacji)} {elem.nazwapizzy}
+                </span>{" "}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className={css.IngredientDetails__box}>
+        <div className={css.IngredientDetails_Pizzas_With_Ingredient_header}>
+          Pizze zawierające wybrany składnik
+        </div>
+        <div className={css.IngredientDetails__Pizzas_List}>
+          {pizzasWithIngredient.map((elem) => {
+            return (
+              <div
+                key={nanoid()}
+                className={css.IngredientDetails__Pizzas_List_Elem}
+              >
+                <span className={css.IngredientDetails__Pizzas_List_Elem_Label}>
+                  {elem.name}
+                </span>
+                <NavLink to={getPizzaLink(elem)}>
+                  <img
+                    className={css.IngredientDetails__Pizzas_List_Elem_Img}
+                    src={elem.img}
+                    alt={elem.name}
+                  />
+                </NavLink>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 };

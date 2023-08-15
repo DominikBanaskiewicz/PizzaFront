@@ -6,13 +6,13 @@ export const Navigation = () => {
   return (
     <nav className={css.nav_container}>
       <Link className={css.nav_link} to="/">
-        Home
+        Pizze
       </Link>
       <Link className={css.nav_link} to="/IngredientsSite">
-        Ingredients
+        Składniki
       </Link>
-      <Link className={css.nav_link} to="/products">
-        Products
+      <Link className={css.nav_link} to="/OperationsList">
+        Operacje
       </Link>
     </nav>
   );
