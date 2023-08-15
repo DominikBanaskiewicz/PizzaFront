@@ -1,11 +1,11 @@
-import "./App.css";
+import "App.css";
 import StartPage from "../src/pages/StartPage/StartPage";
-import IngredientsSite from "./pages/IngerientsSite/IngredientsSite";
+import IngredientsSite from "pages/IngerientsSite/IngredientsSite";
 import { Routes, Route } from "react-router-dom";
-import { PizzaDetails } from "./pages/StartPage/Components/PizzaDetails/PizzaDetails";
-import { IngredientsDetails } from "./pages/IngerientsSite/Components/IngredientDetails/IngredientDetails";
-import { Navigation } from "./pages/Components/Navigation/Navigation";
-import { OperationsList } from "./pages/OperationList/Compoments/OperationList/OperationList";
+import { PizzaDetails } from "pages/StartPage/Components/PizzaDetails/PizzaDetails";
+import { IngredientsDetails } from "pages/IngerientsSite/Components/IngredientDetails/IngredientDetails";
+import { Navigation } from "pages/Components/Navigation/Navigation";
+import { OperationsList } from "pages/OperationList/Compoments/OperationList/OperationList";
 function App() {
   return (
     <div className="App">

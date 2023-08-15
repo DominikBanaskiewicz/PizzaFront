@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchPizzas, fetchIngredients2 } from "../../../../redux/operations";
 import { selectPizzaData } from "../../../../redux/selectors";
-import css from "./PizzasList.module.css";
+import css from "PizzasList.module.css";
 export const PizzasList = () => {
   const dispatch = useDispatch();
 

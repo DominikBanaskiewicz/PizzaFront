@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import css from "./RemovedIngredients.module.css";
+import css from "RemovedIngredients.module.css";
 
 import { selectOperationsForPizza } from "../../../../redux/selectors";
 

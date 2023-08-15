@@ -1,7 +1,7 @@
 import React from "react";
 import { AddedIngredients } from "../AddedIngredients/AddedIngredients";
 import { RemovedIngredients } from "../RemovedIngredients/RemovedIngredients";
-import css from "./OperationList.module.css";
+import css from "OperationList.module.css";
 
 export const OperationsList = () => {
   return (

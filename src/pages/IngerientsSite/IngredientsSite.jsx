@@ -1,5 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { IngredientsList } from "./Components/IngredientsList/IngredientsList";
+import { IngredientsList } from "Components/IngredientsList/IngredientsList";
 
 export default function IngredientsSite() {
   return (
